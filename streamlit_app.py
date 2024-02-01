@@ -15,9 +15,12 @@ st.set_page_config(
 
 alt.themes.enable("dark")
 
-df= pd.read_csv('stardata.csv')
+df= pd.read_csv('stardata3.csv')
 
-with st.sidebar:
-  st.title('The Lars Bars')
+
+
+
+st.table(df)
+  
   
   
