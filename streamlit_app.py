@@ -34,5 +34,5 @@ df= pd.read_csv('stardata3.csv')
 st.bar_chart(df, x="Star_color", y="Temperature_K") #,  color=["#DFFF00", "#6495ED","#FF5F1F","#800080","#5D3FD3","#E30B5C"] )
 #st.table(df))#
 
-  
+st.area_chart(df, x="Star_color", y="Temperature_K")
   
