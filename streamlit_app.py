@@ -31,19 +31,7 @@ df.insert(loc=1,column='Temperature_F', value=t)
   
 # creating the dataset
 
-temps = list(df.Temperature_F)
-colors = list(df.Star_color)
-  
-fig = plt.figure(figsize = (10, 5))
- 
-# creating the bar plot
-plt.bar(colors, temps, color ='maroon', 
-        width = 0.4)
- 
-plt.xlabel("Star Colors")
-plt.ylabel("Star Temps")
-plt.title("Star Data Fun")
-st.pyplot(fig)
+st.bar_chart(chart_data, x="Temperature_F", y="Star_color", , color=["#DFFF00", "#6495ED"] )
   
   
   
