@@ -26,13 +26,13 @@ df= pd.read_csv('stardata3.csv')
 
 # graphing plot
 
-t= (df['Temperature_K'] - 273.15) * 9/5 + 32
-df.insert(loc=1,column='Temperature_F', value=t) 
+#t= (df['Temperature_K'] - 273.15) * 9/5 + 32
+#df.insert(loc=1,column='Temperature_F', value=t) 
   
 # creating the dataset
 
-#st.bar_chart(df, x="Temperature_F", y="Star_color",  color=["#DFFF00", "#6495ED"] )
-st.table(df)
+st.bar_chart(df, x="Temperature_K", y="Star_color",  color=["#DFFF00", "#6495ED","#FF5F1F","#800080","#5D3FD3","#E30B5C"] )
+#st.table(df)
 
   
   
