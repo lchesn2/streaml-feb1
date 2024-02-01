@@ -31,7 +31,7 @@ df.insert(loc=1,column='Temperature_F', value=t)
   
 # creating the dataset
 
-st.bar_chart(chart_data, x="Temperature_F", y="Star_color", , color=["#DFFF00", "#6495ED"] )
+st.bar_chart(chart_data, x="Temperature_F", y="Star_color",  color=["#DFFF00", "#6495ED"] )
   
   
   
