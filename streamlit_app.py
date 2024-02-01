@@ -1,4 +1,12 @@
 import streamlit as st
+import pandas as pd
+import altair as alt
+import plotly.express as px
+
+
+
+
+
 st.set_page_config(
   page_title="The Lars Bars",
   page_icon="",
@@ -7,8 +15,9 @@ st.set_page_config(
 
 alt.themes.enable("dark")
 
-
+df= pd.read_csv('stardata.csv')
 
 with st.sidebar:
-  st.title('nm man')
+  st.title('The Lars Bars')
+  
   
