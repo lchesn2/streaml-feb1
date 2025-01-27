@@ -73,7 +73,7 @@ def submit_game_result():
 
     date = st.date_input("Date", min_value=datetime(2022, 1, 1))
     time = st.time_input("Time", value=datetime.now().time())
-    name = st.selectbox("Player 1", ["Andy","Behring","Brian","Daniel","Hannah","Howard","Ghost","Jose","Jaemo","Kenji","Larah","Maya","Mel","Nate","Nishant","Paul","Poonam","Russel"])
+    name = st.selectbox("Player 1", ["Fermi","Andy","Behring","Brian","Daniel","Hannah","Howard","Ghost","Jose","Jaemo","Kenji","Larah","Maya","Mel","Nate","Nishant","Paul","Poonam","Russel"])
     game_type = st.selectbox("Game Type", ["Assist", "Block", "Sequence"])
             
 
