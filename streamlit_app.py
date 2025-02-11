@@ -27,7 +27,8 @@ def run_query(query):
     finally:
         conn.close()
 
-# Add error handling and connection timeout
+# Streamlit setup
+st.set_page_config(page_title="Game Dashboard", layout="wide")
 try:
     with st.spinner('Connecting to database...'):
         df = run_query('SELECT * FROM Memories LIMIT 5')  # Test with limited data first
@@ -54,8 +55,7 @@ except Exception as e:
 # )
 
 #df = conn.query("SELECT * FROM Memories")
-# Streamlit setup
-st.set_page_config(page_title="Game Dashboard", layout="wide")
+
 
 # Dictionary for storing usernames and hashed passwords (For simplicity, we're using a small dict here)
 # In a real-world scenario, you would likely want to store these securely in a file or database.
