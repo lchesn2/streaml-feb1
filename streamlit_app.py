@@ -12,8 +12,8 @@ import mysql.connector
 import streamlit as st
 import pandas as pd
 
-# import MySQLdb
-# import sshtunnel
+import MySQLdb
+import sshtunnel
 
 # sshtunnel.SSH_TIMEOUT = 10.0
 # sshtunnel.TUNNEL_TIMEOUT = 10.0
