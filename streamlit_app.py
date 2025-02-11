@@ -3,22 +3,33 @@ import pandas as pd
 import bcrypt
 from datetime import datetime
 import sqlalchemy
+import requests
+
+import streamlit as st
+import pymysql
+from sqlalchemy import create_engine
 
 # Create SQLAlchemy engine
-# engine = create_engine("mysql+pymysql://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems")
+engine = create_engine("mysql+pymysql://xxxxxx:xxxxxxxxxxxx@greg.mysql.pythonanywhere-services.com/oldgreg$mems")
 
+# Use engine to execute queries
+def run_query(query):
+    with engine.connect() as connection:
+        return pd.read_sql(query, connection)
 
-import requests
+# Example usage
+df = run_query("SELECT * FROM your_table")
+st.dataframe(df)
 
 # db = pymysql.connect(host = "oldgreg.mysql.pythonanywhere-services.com",
 #                     user = "oldgreg",
 #                      passwd="spong3Bob",  # your password
 #                      db="oldgreg$mems")        # name of the data base
-conn = st.connection(
-    "mysql",
-    type="sql",
-    url="mysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
-)
+# conn = st.connection(
+#     "mysql",
+#     type="sql",
+#     url="mysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
+# )
 
 #df = conn.query("SELECT * FROM games")
 # Streamlit setup
@@ -38,32 +49,6 @@ def check_password(username, password, username_dict):
             return True
     return False
 
-# Login page
-def login(username_dict):
-    if "username" not in st.session_state:
-        st.session_state.username = ""
-    if "logged_in" not in st.session_state:
-        st.session_state.logged_in = False
-
-    if st.session_state.logged_in:
-        return True  # Skip login if already logged in
-
-    st.title("Login")
-
-    # Display login form and handle user input
-    username = st.text_input("Username", key="username")  # This is the widget that sets session state for username
-    password = st.text_input("Password", type="password", key="password")
-
-    if st.button("Login"):
-        # Check credentials and set session state
-        if check_password(username, password, username_dict):
-            st.session_state.logged_in = True
-            st.session_state.username = username  # This updates the session state after login is successful
-            st.success("Login Successful")
-        else:
-            st.error("Invalid username or password")
-
-    return st.session_state.logged_in
 
 
 # Function to display game data
