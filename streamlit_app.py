@@ -10,11 +10,11 @@ import pymysql
 from sqlalchemy import create_engine
 
 
-conn = st.connection(
-    "mysql",
-    type="sql",
-    url="mysql+pymysql://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com:3306/oldgreg$mems"
-)
+# conn = st.connection(
+#     "mysql",
+#     type="sql",
+#     url="mysql+pymysql://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com:3306/oldgreg$mems"
+# )
 
 
 
@@ -29,7 +29,7 @@ conn = st.connection(
 #     url="mysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
 # )
 
-df = conn.query("SELECT * FROM Memories")
+#df = conn.query("SELECT * FROM Memories")
 # Streamlit setup
 st.set_page_config(page_title="Game Dashboard", layout="wide")
 
