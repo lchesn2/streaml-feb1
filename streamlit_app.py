@@ -29,7 +29,7 @@ conn = st.connection(
 #     url="mysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
 # )
 
-df = conn.query("SELECT * FROM games")
+df = conn.query("SELECT * FROM Memories")
 # Streamlit setup
 st.set_page_config(page_title="Game Dashboard", layout="wide")
 
