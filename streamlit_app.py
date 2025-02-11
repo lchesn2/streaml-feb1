@@ -17,6 +17,34 @@ import sshtunnel
 
 st.set_page_config(page_title="Game Dashboard", layout="wide")
 
+db_username = st.secrets["user"]
+db_password = st.secrets["password"]
+
+
+
+timeout = 10
+connection = pymysql.connect(
+  charset="utf8mb4",
+  connect_timeout=timeout,
+  cursorclass=pymysql.cursors.DictCursor,
+  db="defaultdb",
+  host="sequence-larahsmiles-seq.e.aivencloud.com",
+  password=db_password,
+  read_timeout=timeout,
+  port=26458,
+  user=db_username,
+  write_timeout=timeout,
+)
+  
+try:
+  cursor = connection.cursor()
+  cursor.execute("CREATE TABLE mytest (id INTEGER PRIMARY KEY)")
+  cursor.execute("INSERT INTO mytest (id) VALUES (1), (2)")
+  cursor.execute("SELECT * FROM mytest")
+  st.write('TTkekejejejek!!!!!!!!!!!!!!!')
+  st.write(cursor.fetchall())
+finally:
+  connection.close()
 
 # timeout = 10
 # connection = pymysql.connect(
