@@ -8,7 +8,18 @@ import requests
 import streamlit as st
 import pymysql
 from sqlalchemy import create_engine
+import mysql.connector
+import streamlit as st
+import pandas as pd
 
+def init_connection():
+    return mysql.connector.connect(
+        host='oldgreg.mysql.pythonanywhere-services.com',
+        user='oldgreg',
+        password='spong3Bob',
+        database='oldgreg$mems',
+        ssl_mode='VERIFY_IDENTITY'  # This uses the default system CA
+    )
 
 # conn = st.connection(
 #     "mysql",
