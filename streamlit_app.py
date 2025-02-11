@@ -17,7 +17,7 @@ import requests
 conn = st.connection(
     "mysql",
     type="sql",
-    url="mysql+pymysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
+    url="mysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
 )
 
 #df = conn.query("SELECT * FROM games")
