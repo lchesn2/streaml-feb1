@@ -14,11 +14,11 @@ import requests
 #                     user = "oldgreg",
 #                      passwd="spong3Bob",  # your password
 #                      db="oldgreg$mems")        # name of the data base
-# conn = st.connection(
-#     "mysql",
-#     type="sql",
-#     url="mysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
-# )
+conn = st.connection(
+    "mysql",
+    type="sql",
+    url="mysql+pymysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
+)
 
 #df = conn.query("SELECT * FROM games")
 # Streamlit setup
