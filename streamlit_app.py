@@ -18,23 +18,7 @@ import sshtunnel
 st.set_page_config(page_title="Game Dashboard", layout="wide")
 
 
-sshtunnel.SSH_TIMEOUT = 10.0
-sshtunnel.TUNNEL_TIMEOUT = 10.0
 
-with sshtunnel.SSHTunnelForwarder(
-    ('your SSH hostname'),
-    ssh_username='princesslarah93@aim.com', ssh_password='ku1Perbelt101227',
-    remote_bind_address=('your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com', 3306)
-) as tunnel:
-    connection = MySQLdb.connect(
-        user='oldgreg',
-        passwd='spong3Bob',
-        host='127.0.0.1', port=tunnel.local_bind_port,
-        db='oldgreg$mems',
-    )
-    # Do stuff
-    connection.close()
-    df = connection.query("SHOW TABLES;")
 
 
 
