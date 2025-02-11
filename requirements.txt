@@ -14,8 +14,6 @@ jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
-sqlalchemy>=1.4.0
-mysqlclient>=2.0.3
 mdurl==0.1.2
 narwhals==1.23.0
 numpy==2.0.2
@@ -41,3 +39,8 @@ tornado==6.4.2
 typing_extensions==4.12.2
 tzdata==2025.1
 urllib3==2.3.0
+streamlit
+sqlalchemy>=1.4.0
+mysqlclient>=2.0.3
+pymysql>=1.0.2
+cryptography>=3.4.7
