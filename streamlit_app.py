@@ -21,7 +21,7 @@ def run_query(query):
         return pd.read_sql(query, connection)
 
 # Example usage
-df = run_query("SELECT * FROM your_table")
+df = run_query("SELECT * FROM games")
 st.dataframe(df)
 
 # db = pymysql.connect(host = "oldgreg.mysql.pythonanywhere-services.com",
