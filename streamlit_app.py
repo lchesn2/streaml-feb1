@@ -12,20 +12,25 @@ import mysql.connector
 import streamlit as st
 import pandas as pd
 
-def init_connection():
-    return mysql.connector.connect(
-        host='oldgreg.mysql.pythonanywhere-services.com',
-        user='oldgreg',
-        password='spong3Bob',
-        database='oldgreg$mems',
-        ssl={'ssl': {'ca': None}}  # This uses the default system CA
-    )
-def run_query(query):
-    conn = init_connection()
-    try:
-        return pd.read_sql(query, conn)
-    finally:
-        conn.close()
+# import MySQLdb
+# import sshtunnel
+
+# sshtunnel.SSH_TIMEOUT = 10.0
+# sshtunnel.TUNNEL_TIMEOUT = 10.0
+
+# with sshtunnel.SSHTunnelForwarder(
+#     ('your SSH hostname'),
+#     ssh_username='your PythonAnywhere username', ssh_password='the password you use to log in to the PythonAnywhere website',
+#     remote_bind_address=('your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com', 3306)
+# ) as tunnel:
+#     connection = MySQLdb.connect(
+#         user='your PythonAnywhere database username',
+#         passwd='your PythonAnywhere database password',
+#         host='127.0.0.1', port=tunnel.local_bind_port,
+#         db='your database name, eg yourusername$mydatabase',
+#     )
+#     # Do stuff
+#     connection.close()
 
 # Streamlit setup
 st.set_page_config(page_title="Game Dashboard", layout="wide")
