@@ -9,9 +9,12 @@ import streamlit as st
 import pymysql
 from sqlalchemy import create_engine
 
-# Create SQLAlchemy engine
-engine = create_engine("mysql+pymysql://oldgreg:spong3Bob@greg.mysql.pythonanywhere-services.com/oldgreg$mems")
 
+conn = st.connection(
+    "mysql",
+    type="sql",
+    url="mysql+pymysql://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com:3306/oldgreg$mems"
+)
 # Use engine to execute queries
 def run_query(query):
     with engine.connect() as connection:
