@@ -17,9 +17,12 @@ import sshtunnel
 import os
 
 st.set_page_config(page_title="Game Dashboard", layout="wide")
+try:
+  db_username = st.secrets["db_username"]
+  db_password = st.secrets["db_password"]
 
-db_username = st.secrets["db_username"]
-db_password = st.secrets["db_password"]
+except Exception as e:
+  print(e)
 
 
 
@@ -56,7 +59,6 @@ finally:
 #   host="sequence-larahsmiles-seq.e.aivencloud.com",
 #   read_timeout=timeout,
 #   port=26458,
-#   user="avnadmin",
 #   write_timeout=timeout,
 # )
   
@@ -78,8 +80,6 @@ finally:
 #df = conn.query("SELECT * FROM Memories")
 
 
-
-# Function to display game data
 def display_game_data():
     today = datetime.now().date()
     st.title("Game Dashboard")
