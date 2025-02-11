@@ -31,8 +31,14 @@ def run_query(query):
 st.set_page_config(page_title="Game Dashboard", layout="wide")
 try:
     with st.spinner('Connecting to database...'):
-        df = run_query('SELECT * FROM Memories LIMIT 5')  # Test with limited data first
-        st.dataframe(df)
+        # df = run_query('SELECT * FROM Memories LIMIT 5')  # Test with limited data first
+        # st.dataframe(df)
+        conn = st.connection(
+            "mysql",
+            type="sql",
+            url="mysql+pymysql://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com:3306/oldgreg$mems"
+        )
+        df = conn.query("SHOW TABLES;")
 except Exception as e:
     st.error(f"Connection failed: {str(e)}")
 # conn = st.connection(
