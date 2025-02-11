@@ -10,7 +10,7 @@ import pymysql
 from sqlalchemy import create_engine
 
 # Create SQLAlchemy engine
-engine = create_engine("mysql+pymysql://xxxxxx:xxxxxxxxxxxx@greg.mysql.pythonanywhere-services.com/oldgreg$mems")
+engine = create_engine("mysql+pymysql://oldgreg:spong3Bob@greg.mysql.pythonanywhere-services.com/oldgreg$mems")
 
 # Use engine to execute queries
 def run_query(query):
