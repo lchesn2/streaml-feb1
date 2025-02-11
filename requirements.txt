@@ -42,5 +42,6 @@ urllib3==2.3.0
 streamlit
 sqlalchemy>=1.4.0
 mysqlclient>=2.0.3
+sshtunnel
 pymysql>=1.0.2
 cryptography>=3.4.7
