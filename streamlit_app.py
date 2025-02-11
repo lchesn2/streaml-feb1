@@ -42,53 +42,11 @@ st.set_page_config(page_title="Game Dashboard", layout="wide")
 
 
 
-# try:
-#     with st.spinner('Connecting to database...'):
-#         # df = run_query('SELECT * FROM Memories LIMIT 5')  # Test with limited data first
-#         # st.dataframe(df)
-#         conn = st.connection(
-#             "mysql",
-#             type="sql",
-#             url="mysql+pymysql://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com:3306/oldgreg$mems"
-#         )
-#         df = conn.query("SHOW TABLES;")
-# except Exception as e:
-#     st.error(f"Connection failed: {str(e)}")
-# conn = st.connection(
-#     "mysql",
-#     type="sql",
-#     url="mysql+pymysql://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com:3306/oldgreg$mems"
-# )
 
 
 
-
-# db = pymysql.connect(host = "oldgreg.mysql.pythonanywhere-services.com",
-#                     user = "oldgreg",
-#                      passwd="spong3Bob",  # your password
-#                      db="oldgreg$mems")        # name of the data base
-# conn = st.connection(
-#     "mysql",
-#     type="sql",
-#     url="mysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
-# )
 
 #df = conn.query("SELECT * FROM Memories")
-
-
-# Dictionary for storing usernames and hashed passwords (For simplicity, we're using a small dict here)
-# In a real-world scenario, you would likely want to store these securely in a file or database.
-username_dict = {
-    'Larah': bcrypt.hashpw('newton'.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')  # Hashed password for 'newton'
-}
-
-# Helper function for user authentication (with password hashing)
-def check_password(username, password, username_dict):
-    if username in username_dict:
-        # Check if the provided password matches the hashed password
-        if bcrypt.checkpw(password.encode('utf-8'), username_dict[username].encode('utf-8')):
-            return True
-    return False
 
 
 
