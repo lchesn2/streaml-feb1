@@ -23,7 +23,8 @@ st.set_page_config(page_title="Game Dashboard", layout="wide")
 
 # except Exception as e:
 #   print(e)
-
+db_username = st.secrets["db_username"]
+db_password = st.secrets["db_password"]
 
 
 # timeout = 10
