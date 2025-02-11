@@ -17,8 +17,8 @@ import sshtunnel
 
 st.set_page_config(page_title="Game Dashboard", layout="wide")
 
-db_username = st.secrets["user"]
-db_password = st.secrets["password"]
+db_username = st.secrets["db_username"]
+db_password = st.secrets["db_password"]
 
 
 
