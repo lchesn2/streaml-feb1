@@ -2,7 +2,25 @@ import streamlit as st
 import pandas as pd
 import bcrypt
 from datetime import datetime
+import sqlalchemy
 
+# Create SQLAlchemy engine
+# engine = create_engine("mysql+pymysql://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems")
+
+
+import requests
+
+# db = pymysql.connect(host = "oldgreg.mysql.pythonanywhere-services.com",
+#                     user = "oldgreg",
+#                      passwd="spong3Bob",  # your password
+#                      db="oldgreg$mems")        # name of the data base
+conn = st.connection(
+    "mysql",
+    type="sql",
+    url="mysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
+)
+
+df = conn.query("SELECT * FROM games")
 # Streamlit setup
 st.set_page_config(page_title="Game Dashboard", layout="wide")
 
