@@ -20,7 +20,20 @@ def init_connection():
         database='oldgreg$mems',
         ssl_mode='VERIFY_IDENTITY'  # This uses the default system CA
     )
+def run_query(query):
+    conn = init_connection()
+    try:
+        return pd.read_sql(query, conn)
+    finally:
+        conn.close()
 
+# Add error handling and connection timeout
+try:
+    with st.spinner('Connecting to database...'):
+        df = run_query('SELECT * FROM Memories LIMIT 5')  # Test with limited data first
+        st.dataframe(df)
+except Exception as e:
+    st.error(f"Connection failed: {str(e)}")
 # conn = st.connection(
 #     "mysql",
 #     type="sql",
