@@ -15,25 +15,29 @@ import pandas as pd
 import MySQLdb
 import sshtunnel
 
+st.set_page_config(page_title="Game Dashboard", layout="wide")
+
+
 sshtunnel.SSH_TIMEOUT = 10.0
 sshtunnel.TUNNEL_TIMEOUT = 10.0
 
-# with sshtunnel.SSHTunnelForwarder(
-#     ('your SSH hostname'),
-#     ssh_username='your PythonAnywhere username', ssh_password='the password you use to log in to the PythonAnywhere website',
-#     remote_bind_address=('your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com', 3306)
-# ) as tunnel:
-#     connection = MySQLdb.connect(
-#         user='your PythonAnywhere database username',
-#         passwd='your PythonAnywhere database password',
-#         host='127.0.0.1', port=tunnel.local_bind_port,
-#         db='your database name, eg yourusername$mydatabase',
-#     )
-#     # Do stuff
-#     connection.close()
+with sshtunnel.SSHTunnelForwarder(
+    ('your SSH hostname'),
+    ssh_username='princesslarah93@aim.com', ssh_password='ku1Perbelt101227',
+    remote_bind_address=('your PythonAnywhere database hostname, eg. yourusername.mysql.pythonanywhere-services.com', 3306)
+) as tunnel:
+    connection = MySQLdb.connect(
+        user='oldgreg',
+        passwd='spong3Bob',
+        host='127.0.0.1', port=tunnel.local_bind_port,
+        db='oldgreg$mems',
+    )
+    # Do stuff
+    connection.close()
+    df = connection.query("SHOW TABLES;")
 
 
-st.set_page_config(page_title="Game Dashboard", layout="wide")
+
 # try:
 #     with st.spinner('Connecting to database...'):
 #         # df = run_query('SELECT * FROM Memories LIMIT 5')  # Test with limited data first
