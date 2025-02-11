@@ -15,8 +15,8 @@ import pandas as pd
 import MySQLdb
 import sshtunnel
 
-# sshtunnel.SSH_TIMEOUT = 10.0
-# sshtunnel.TUNNEL_TIMEOUT = 10.0
+sshtunnel.SSH_TIMEOUT = 10.0
+sshtunnel.TUNNEL_TIMEOUT = 10.0
 
 # with sshtunnel.SSHTunnelForwarder(
 #     ('your SSH hostname'),
