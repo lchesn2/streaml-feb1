@@ -18,7 +18,7 @@ def init_connection():
         user='oldgreg',
         password='spong3Bob',
         database='oldgreg$mems',
-        ssl_mode='VERIFY_IDENTITY'  # This uses the default system CA
+        ssl={'ssl': {'ca': None}}  # This uses the default system CA
     )
 def run_query(query):
     conn = init_connection()
