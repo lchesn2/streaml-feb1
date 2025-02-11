@@ -15,14 +15,9 @@ conn = st.connection(
     type="sql",
     url="mysql+pymysql://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com:3306/oldgreg$mems"
 )
-# Use engine to execute queries
-def run_query(query):
-    with engine.connect() as connection:
-        return pd.read_sql(query, connection)
 
-# Example usage
-df = run_query("SELECT * FROM games")
-st.dataframe(df)
+
+
 
 # db = pymysql.connect(host = "oldgreg.mysql.pythonanywhere-services.com",
 #                     user = "oldgreg",
@@ -34,7 +29,7 @@ st.dataframe(df)
 #     url="mysql:://oldgreg:spong3Bob@oldgreg.mysql.pythonanywhere-services.com/oldgreg$mems"
 # )
 
-#df = conn.query("SELECT * FROM games")
+df = conn.query("SELECT * FROM games")
 # Streamlit setup
 st.set_page_config(page_title="Game Dashboard", layout="wide")
 
